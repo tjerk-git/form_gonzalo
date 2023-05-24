@@ -69,8 +69,9 @@
         {#if $musicProductionSelection}
             <strong>{$musicProductionSelection}</strong>
             <br />
-        {/if}. You promised to iterate <strong>{$count}</strong> times, using
-        the feedback of <strong>{$stakeholder}</strong> and with targetAudience
+        {/if}. In your own words: {$summary} <br /><br />
+        You promised to iterate <strong>{$count}</strong> times, using the
+        feedback of <strong>{$stakeholder}</strong> and with targetAudience
         <strong>{$targetAudience}.</strong>
     </p>
     <p>You will ask for <strong>{$ec}'s</strong></p>
