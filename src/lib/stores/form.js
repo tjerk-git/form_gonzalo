@@ -12,4 +12,6 @@ export const stakeholder = writable("");
 export const targetAudience = writable("");
 export let count = writable(1);
 
+export const ec = writable("");
+
 export const completed = writable(false);

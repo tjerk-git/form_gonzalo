@@ -15,6 +15,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@efstajas/svelte-stepper": "^0.1.4"
+		"@efstajas/svelte-stepper": "^0.1.4",
+		"svelte-select": "^5.6.1"
 	}
 }

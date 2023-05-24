@@ -77,7 +77,7 @@
     {/if}
 </p>
 
-Please fill in your summary:
+Please fill in your learning goal:
 <textarea bind:value={$summary} on:keydown={handleInput} />
 
 <br />

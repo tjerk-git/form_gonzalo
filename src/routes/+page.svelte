@@ -15,6 +15,7 @@
         targetAudience,
         stakeholder,
         count,
+        ec,
     } from "../lib/stores/form.js";
 
     import { Stepper, makeStep } from "@efstajas/svelte-stepper";
@@ -42,44 +43,40 @@
             props: undefined,
         }),
     ];
+
+    const handleCompleted = () => {
+        completed.set(false);
+    };
 </script>
 
-<Stepper {steps} />
+{#if $completed}
+    <h1>Summary</h1>
+    <p>
+        Let’s see: {$name}, you want to do go for
 
-<h1>Results</h1>
+        {#if $FieldSelection}
+            <strong>{$FieldSelection}</strong>
+        {/if}
+        with the focus on:
+        {#if $audioSelection}
+            <strong>{$audioSelection}</strong>
+        {/if}
 
-{#if $name}
-    <p>Your name is {$name}</p>
-{/if}
+        {#if $musicSelection}
+            <strong>{$musicSelection}</strong>
+        {/if}
 
-{#if $audioSelection}
-    <p>You want to {$audioSelection}</p>
-{/if}
-
-{#if $musicSelection}
-    <p>You want to {$musicSelection}</p>
-{/if}
-
-{#if $musicProductionSelection}
-    <p>You want to {$musicProductionSelection}</p>
-{/if}
-
-{#if $FieldSelection}
-    <p>You selected {$FieldSelection}</p>
-{/if}
-
-{#if $summary}
-    <p>You said: {$summary}</p>
-{/if}
-
-{#if $stakeholder}
-    <p>Your stakeholders are: {$stakeholder}</p>
-{/if}
-
-{#if $targetAudience}
-    <p>Your target audience is: {$targetAudience}</p>
-{/if}
-
-{#if $count}
-    <p>Your iteration count is {$count}</p>
+        {#if $musicProductionSelection}
+            <strong>{$musicProductionSelection}</strong>
+            <br />
+        {/if}. You promised to iterate <strong>{$count}</strong> times, using
+        the feedback of <strong>{$stakeholder}</strong>
+    </p>
+    <p>You will ask for <strong>{$ec}'s</strong></p>
+    <br />Good luck with your learning goal!
+    <br /><br />
+    <button class="outline" on:click={handleCompleted}>Hang on, go back!</button
+    >
+{:else}
+    <Stepper {steps} />
 {/if}
