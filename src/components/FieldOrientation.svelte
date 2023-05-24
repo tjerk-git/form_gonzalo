@@ -89,6 +89,9 @@
 </div>
 
 <style>
+    h1 {
+        margin-bottom: 10px !important;
+    }
     .column {
         display: inline-block;
         vertical-align: top;
@@ -97,6 +100,7 @@
         border-radius: 10px;
         border: 2px solid #031f68;
         margin-left: 10px;
+        margin-bottom: 20px;
     }
     .buttonContainer {
         display: flex;

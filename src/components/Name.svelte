@@ -9,7 +9,9 @@
     const stepController = createStepController();
 </script>
 
-<h1>Please enter your name</h1>
+<br />
+<p>Welcome to the awesome sound learning goal generator helper thing!</p>
+<h3>Please enter your name</h3>
 
 <input bind:value={$name} on:keydown={handleInput} />
 
