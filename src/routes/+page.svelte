@@ -11,9 +11,14 @@
         musicProductionSelection,
         FieldSelection,
         completed,
+        summary,
+        targetAudience,
+        stakeholder,
+        count,
     } from "../lib/stores/form.js";
 
     import { Stepper, makeStep } from "@efstajas/svelte-stepper";
+    import StakeHolders from "../components/StakeHolders.svelte";
 
     const steps = [
         makeStep({
@@ -32,31 +37,49 @@
             component: GoalSummary,
             props: undefined,
         }),
+        makeStep({
+            component: StakeHolders,
+            props: undefined,
+        }),
     ];
 </script>
 
 <Stepper {steps} />
 
-{#if $completed === true}
-    <h1>Results</h1>
+<h1>Results</h1>
 
-    {#if $name}
-        <p>Your name is {$name}</p>
-    {/if}
+{#if $name}
+    <p>Your name is {$name}</p>
+{/if}
 
-    {#if $audioSelection}
-        <p>You selected {$audioSelection}</p>
-    {/if}
+{#if $audioSelection}
+    <p>You want to {$audioSelection}</p>
+{/if}
 
-    {#if $musicSelection}
-        <p>You selected {$musicSelection}</p>
-    {/if}
+{#if $musicSelection}
+    <p>You want to {$musicSelection}</p>
+{/if}
 
-    {#if $musicProductionSelection}
-        <p>You selected {$musicProductionSelection}</p>
-    {/if}
+{#if $musicProductionSelection}
+    <p>You want to {$musicProductionSelection}</p>
+{/if}
 
-    {#if $FieldSelection}
-        <p>You selected {$FieldSelection}</p>
-    {/if}
+{#if $FieldSelection}
+    <p>You selected {$FieldSelection}</p>
+{/if}
+
+{#if $summary}
+    <p>You said: {$summary}</p>
+{/if}
+
+{#if $stakeholder}
+    <p>Your stakeholders are: {$stakeholder}</p>
+{/if}
+
+{#if $targetAudience}
+    <p>Your target audience is: {$targetAudience}</p>
+{/if}
+
+{#if $count}
+    <p>Your iteration count is {$count}</p>
 {/if}

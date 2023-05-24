@@ -83,8 +83,10 @@
 
 <br />
 
-<button on:click={stepController.nextStep}>Next</button>
-<button on:click={stepController.previousStep}>Previous</button>
+<div class="buttonContainer">
+    <button on:click={stepController.previousStep}>Previous</button>
+    <button on:click={stepController.nextStep}>Next</button>
+</div>
 
 <style>
     .column {
@@ -96,8 +98,12 @@
         border: 2px solid #031f68;
         margin-left: 10px;
     }
-
-    label {
-        display: block;
+    .buttonContainer {
+        display: flex;
+        text-align: center;
+        width: 100%;
+    }
+    .buttonContainer :first-child {
+        margin-right: 20px;
     }
 </style>

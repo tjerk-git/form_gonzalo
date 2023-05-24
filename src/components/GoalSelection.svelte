@@ -64,7 +64,7 @@
     {/each}
 {/if}
 
-{#if $FieldSelection == "MusicProduction"}
+{#if $FieldSelection == "Music Production"}
     {#each musicProductionOptions as option}
         <label>
             <input
@@ -79,5 +79,18 @@
 
 <br />
 
-<button on:click={stepController.nextStep}>Next</button>
-<button on:click={stepController.previousStep}>Previous</button>
+<div class="buttonContainer">
+    <button on:click={stepController.previousStep}>Previous</button>
+    <button on:click={stepController.nextStep}>Next</button>
+</div>
+
+<style>
+    .buttonContainer {
+        display: flex;
+        text-align: center;
+        width: 100%;
+    }
+    .buttonContainer :first-child {
+        margin-right: 20px;
+    }
+</style>
